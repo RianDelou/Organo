@@ -1,0 +1,16 @@
+.mapa {
+    text-align: center;
+    padding: 32px;
+}
+
+.mapa h3 {
+    font-size: 32px;
+    border-bottom: 4px solid;
+    display: inline-block;
+}
+
+.mapa .players {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+}
