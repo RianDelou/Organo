@@ -5,7 +5,6 @@ import Botao from "../Botao";
 import { useState } from "react";
 
 const Formulario = (props) => {
-  const [firstMap] = props.listaMapas;
 
   const listaAgentes = [
     {
@@ -130,17 +129,14 @@ const Formulario = (props) => {
     },
 ];
 
-
-  const [firstAgent] = listaAgentes;
-
   const [getName, setName] = useState("");
   const [getPhoto, setPhoto] = useState("");
-  const [getAgent, setAgent] = useState(firstAgent);
-  const [getMap, setMap] = useState(firstMap);
+  const [getAgent, setAgent] = useState("");
+  const [getNameAgent, setNameAgent] = useState("");
+  const [getMap, setMap] = useState("");
 
   const aoSalvar = (event) => {
     event.preventDefault();
-    console.log("Valores submetidos!", getName, getPhoto, getAgent, getMap);
 
     props.novoPlayer({
       getName,
@@ -151,7 +147,9 @@ const Formulario = (props) => {
 
     setName("");
     setPhoto("");
-    
+    setAgent("");
+    setNameAgent("");
+    setMap("");
   };
 
   return (
@@ -181,9 +179,10 @@ const Formulario = (props) => {
             );
             if (agenteEncontrado) {
               setAgent(agenteEncontrado);
+              setNameAgent(agenteEncontrado.nome);
             }
           }}
-          value={getAgent.nome}
+          value={getNameAgent}
         />
         <ArraySelect
           required={true}

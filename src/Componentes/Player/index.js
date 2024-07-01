@@ -3,7 +3,7 @@ import './Player.css'
 const Player = (props) => {
     return(
         <div className='player'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={{backgroundColor: props.corDeFundo}}>
                 <img src={props.playerPhoto} alt={props.playerName}></img>
                 <img src={props.agentIcon} alt={props.agentName}></img>
             </div>

@@ -45,7 +45,6 @@ function App() {
       <Formulario
         novoPlayer={(player) => {
           setPlayers([...getPlayers, player]);
-          console.log(getPlayers);
         }}
         listaMapas={mapas.map((value) => value.nome)}
       />
