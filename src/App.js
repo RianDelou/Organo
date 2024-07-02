@@ -2,6 +2,7 @@ import Banner from "./Componentes/Banner";
 import Formulario from "./Componentes/Formulario";
 import { useState } from "react";
 import Mapa from "./Componentes/Mapa";
+import Footer from "./Componentes/Footer";
 function App() {
   const mapas = [
     {
@@ -60,6 +61,8 @@ function App() {
           />
         );
       })}
+
+      <Footer />
 
     </div>
   );
