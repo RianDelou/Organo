@@ -1,6 +1,6 @@
 .banner {
-    background-color: #6278F7;
     text-align: center;
+    background: linear-gradient(to right,  #eae9e7 0%,  50%, #ff5862 50%, #ff5862 100%);
 }
 
 .banner img {
