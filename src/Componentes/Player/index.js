@@ -1,7 +1,9 @@
 import './Player.css'
 
 const Player = (props) => {
+
     return(
+        
         <div className='player'>
             <div className='cabecalho' style={{backgroundColor: props.corDeFundo}}>
                 <img src={props.playerPhoto} alt={props.playerName}></img>

@@ -2,7 +2,7 @@ import "./Formulario.css";
 import CampoTexto from "../CampoTexto";
 import ArraySelect from "../ArraySelect";
 import Botao from "../Botao";
-import { useState, useRef } from "react";
+import { useState, useRef} from "react";
 import SelectFile from "../SelectFile";
 
 const Formulario = (props) => {
@@ -134,28 +134,30 @@ const Formulario = (props) => {
   const [getAgent, setAgent] = useState("");
   const [getNameAgent, setNameAgent] = useState("");
   const [getMap, setMap] = useState("");
-  
-  const fileInputRef = useRef(null);
+
+  const fileInputRef = useRef(null); // Aprofundar no useRef depois
 
   const aoSalvar = (event) => {
     event.preventDefault();
 
-    props.novoPlayer({
+    let submitControl = props.novoPlayer({
       getName,
       getPhotoURL,
       getAgent,
       getMap,
     });
-    
 
-    setName("");
-    setPhotoURL("");
-    setAgent("");
-    setNameAgent("");
-    setMap("");
+    if (submitControl) {
+      
+      setName("");
+      setPhotoURL("");
+      setAgent("");
+      setNameAgent("");
+      setMap("");
 
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     }
   };
 

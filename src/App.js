@@ -1,6 +1,6 @@
 import Banner from "./Componentes/Banner";
 import Formulario from "./Componentes/Formulario";
-import { useState } from "react";
+import { useState} from "react";
 import Mapa from "./Componentes/Mapa";
 import Footer from "./Componentes/Footer";
 function App() {
@@ -52,8 +52,10 @@ function App() {
           if (playersCadaMap.length < 5) {
             setPlayers([...getPlayers, player]);
             setAlert("");
+            return true;
           } else {
             setAlert("Player não adicionado: O mapa "+player.getMap+" contém 5 players");
+            return false;
           }
 
         }}
@@ -69,6 +71,7 @@ function App() {
             corPrimaria={map.corPrimaria}
             corSecundaria={map.corSecundaria}
             player={getPlayers.filter((value) => value.getMap === map.nome)}
+            allMaps={mapas}
           />
         );
       })}
