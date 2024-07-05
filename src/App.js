@@ -40,14 +40,35 @@ function App() {
 
   const [getPlayers, setPlayers] = useState([]);
 
+  const teste = () => {
+    mapas.map((map) => {
+
+      const playersCadaMap = getPlayers.filter((value) => value.getMap === map.nome)
+      console.log(playersCadaMap.length)
+      if (playersCadaMap.length > 2) {
+        console.log("não pode")
+      }
+
+    })
+
+  }
+
+teste()
+
   return (
     <div className="App">
       <Banner />
       <Formulario
         novoPlayer={(player) => {
-
           
-          setPlayers([...getPlayers, player]);
+          const playersCadaMap = getPlayers.filter((value) => value.getMap === player.getMap);
+
+          if (playersCadaMap.length < 5) {
+            setPlayers([...getPlayers, player]);
+          } else {
+            alert("Esse mapa já tem 5 jogadores!");
+          }
+
         }}
         listaMapas={mapas.map((value) => value.nome)}
       />
