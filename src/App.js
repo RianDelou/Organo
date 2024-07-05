@@ -39,21 +39,7 @@ function App() {
   ];
 
   const [getPlayers, setPlayers] = useState([]);
-
-  const teste = () => {
-    mapas.map((map) => {
-
-      const playersCadaMap = getPlayers.filter((value) => value.getMap === map.nome)
-      console.log(playersCadaMap.length)
-      if (playersCadaMap.length > 2) {
-        console.log("não pode")
-      }
-
-    })
-
-  }
-
-teste()
+  const [getAlert, setAlert] = useState();
 
   return (
     <div className="App">
@@ -65,12 +51,14 @@ teste()
 
           if (playersCadaMap.length < 5) {
             setPlayers([...getPlayers, player]);
+            setAlert("");
           } else {
-            alert("Esse mapa já tem 5 jogadores!");
+            setAlert("Player não adicionado: O mapa "+player.getMap+" contém 5 players");
           }
 
         }}
         listaMapas={mapas.map((value) => value.nome)}
+        alert={getAlert}
       />
 
       {mapas.map((map) => {

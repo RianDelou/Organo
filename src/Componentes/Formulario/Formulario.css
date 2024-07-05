@@ -11,3 +11,8 @@
     padding: 45px 70px; 
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
+
+.formulario .alert {
+    color: #ff5862;
+    font-size: 24px;
+}

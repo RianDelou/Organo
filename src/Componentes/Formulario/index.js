@@ -146,6 +146,7 @@ const Formulario = (props) => {
       getAgent,
       getMap,
     });
+    
 
     setName("");
     setPhotoURL("");
@@ -162,6 +163,7 @@ const Formulario = (props) => {
     <section className="formulario">
       <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do Player</h2>
+        <p className="alert">{props.alert}</p>
         <ArraySelect
           required={true}
           label="Mapa"
