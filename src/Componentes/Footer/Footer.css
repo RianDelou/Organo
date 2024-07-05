@@ -2,7 +2,11 @@
     display: block;
     text-align: center;
     background-color: #ff5862 ;
-    padding: 16px;
+    padding: 20px;
+}
+
+.footer img {
+    width: 9%;
 }
 
 .footer p {

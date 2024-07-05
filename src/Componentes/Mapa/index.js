@@ -16,12 +16,21 @@ const Mapa = (props) => {
             agentIcon={value.getAgent.icon}
             playerName={value.getName}
             playerPhoto={value.getPhotoURL}
+            withPlayer={true}
           ></Player>
         ))}
       </div>
     </section>
   ) : (
-    ""
+    <section className="mapa" style={{ backgroundColor: props.corPrimaria }}>
+      <h3 style={{ borderColor: props.corSecundaria }}>{props.mapa}</h3>
+      <div className="players">
+          <Player
+            withPlayer={false}
+            corDeFundo={props.corSecundaria}
+          ></Player>
+      </div>
+    </section>
   );
 };
 
