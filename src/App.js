@@ -45,6 +45,8 @@ function App() {
       <Banner />
       <Formulario
         novoPlayer={(player) => {
+
+          
           setPlayers([...getPlayers, player]);
         }}
         listaMapas={mapas.map((value) => value.nome)}

@@ -7,6 +7,7 @@ const Mapa = (props) => {
       <h3 style={{ borderColor: props.corSecundaria }}>{props.mapa}</h3>
       <div className="players">
         {props.player.map((value) => (
+          
           <Player
             corDeFundo={props.corSecundaria}
             key={value.getName}
@@ -14,7 +15,7 @@ const Mapa = (props) => {
             agentFunction={value.getAgent.funcao}
             agentIcon={value.getAgent.icon}
             playerName={value.getName}
-            playerPhoto={value.getPhoto}
+            playerPhoto={value.getPhotoURL}
           ></Player>
         ))}
       </div>

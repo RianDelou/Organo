@@ -2,10 +2,10 @@ import "./Formulario.css";
 import CampoTexto from "../CampoTexto";
 import ArraySelect from "../ArraySelect";
 import Botao from "../Botao";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import SelectFile from "../SelectFile";
 
 const Formulario = (props) => {
-
   const listaAgentes = [
     {
       nome: "Jett",
@@ -127,47 +127,47 @@ const Formulario = (props) => {
       funcao: "Controlador",
       icon: "https://static.wikia.nocookie.net/valorant/images/3/30/Clove_icon.png/",
     },
-];
+  ];
 
   const [getName, setName] = useState("");
-  const [getPhoto, setPhoto] = useState("");
+  const [getPhotoURL, setPhotoURL] = useState("");
   const [getAgent, setAgent] = useState("");
   const [getNameAgent, setNameAgent] = useState("");
   const [getMap, setMap] = useState("");
+  
+  const fileInputRef = useRef(null);
 
   const aoSalvar = (event) => {
     event.preventDefault();
 
     props.novoPlayer({
       getName,
-      getPhoto,
+      getPhotoURL,
       getAgent,
       getMap,
     });
 
     setName("");
-    setPhoto("");
+    setPhotoURL("");
     setAgent("");
     setNameAgent("");
     setMap("");
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   return (
     <section className="formulario">
       <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do Player</h2>
-        <CampoTexto
+        <ArraySelect
           required={true}
-          label="Nome"
-          placeholder="Digite seu nome"
-          handleChange={(event) => setName(event.target.value)}
-          value={getName}
-        />
-        <CampoTexto
-          label="Foto"
-          placeholder="Informe o endereço da imagem"
-          handleChange={(event) => setPhoto(event.target.value)}
-          value={getPhoto}
+          label="Mapa"
+          itens={props.listaMapas}
+          handleChange={(event) => setMap(event.target.value)}
+          value={getMap}
         />
         <ArraySelect
           required={true}
@@ -184,12 +184,28 @@ const Formulario = (props) => {
           }}
           value={getNameAgent}
         />
-        <ArraySelect
+        <CampoTexto
           required={true}
-          label="Mapa"
-          itens={props.listaMapas}
-          handleChange={(event) => setMap(event.target.value)}
-          value={getMap}
+          label="Nome"
+          placeholder="Digite o nome do player"
+          handleChange={(event) => setName(event.target.value)}
+          value={getName}
+        />
+        <SelectFile
+          required={true}
+          label="Foto do player"
+          handleChange={(event) => {
+            const file = event.target.files[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onloadend = () => {
+                setPhotoURL(reader.result);
+              };
+              reader.readAsDataURL(file);
+            }
+          }}
+          value={getPhotoURL}
+          inputRef={fileInputRef}
         />
         <Botao>Criar Card</Botao>
       </form>
