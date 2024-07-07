@@ -20,8 +20,8 @@ const Player = (props) => {
         <img src="./imagens/withoutPlayer.png" alt="Sem Player"></img>
       </div>
       <div className="rodape">
-        <h4>Sem ideia para esse mapa?</h4>
-        <h5>Faça a sua comp do seu jeito!</h5>
+        <h4>Nenhum jogador adicionado</h4>
+        <h5>Crie a comp desse mapa!</h5>
       </div>
     </div>
   );

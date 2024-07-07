@@ -164,7 +164,7 @@ const Formulario = (props) => {
   return (
     <section className="formulario">
       <form onSubmit={aoSalvar}>
-        <h2>Preencha os dados para criar o card do Player</h2>
+        <h2>Preencha os dados para criar o card do(a) Jogador(a)</h2>
         <p className="alert">{props.alert}</p>
         <ArraySelect
           required={true}
@@ -191,7 +191,7 @@ const Formulario = (props) => {
         <CampoTexto
           required={true}
           label="Nome"
-          placeholder="Digite o nome do player"
+          placeholder="Digite o nome do(a) jogador(a)"
           handleChange={(event) => setName(event.target.value)}
           value={getName}
         />
