@@ -23,18 +23,18 @@ function App() {
     },
     {
       nome: "Bind",
-      corPrimaria: "#f7cca6",
-      corSecundaria: "#aa7444",
+      corPrimaria: "#f7dabe",
+      corSecundaria: "#b57e4e",
     },
     {
       nome: "Ascent",
-      corPrimaria: "#ff9c9c",
-      corSecundaria: "#ee4242",
+      corPrimaria: "#faafaf",
+      corSecundaria: "#f55b5b",
     },
     {
       nome: "Abyss",
-      corPrimaria: "#53dbdb",
-      corSecundaria: "#006666",
+      corPrimaria: "#8adede",
+      corSecundaria: "#1c9494",
     },
   ];
 

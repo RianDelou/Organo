@@ -1,5 +1,5 @@
 button {
-    background-color: #6278F7;
+    background-color:#18212a;
     border-radius: 10px;
     font-weight: 700;
     font-size: 18px;
@@ -10,6 +10,6 @@ button {
 }
 
 button:hover {
-    color: #95FFD4;
+    color: #ee5861;
     transition: 0.5s;
 }
