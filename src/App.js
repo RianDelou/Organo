@@ -48,7 +48,7 @@ function App() {
         novoPlayer={(player) => {
           debugger
           const playersCadaMap = getPlayers.filter((value) => value.getMap === player.getMap);
-          const playerExistsByName = playersCadaMap.find((value) => value.getName === player.getName);
+          const playerExistsByName = playersCadaMap.find((value) => value.getName.toLowerCase() === player.getName.toLowerCase());
           const playerExistsByAgent = playersCadaMap.find((value) => value.getAgent.nome === player.getAgent.nome);
 
           console.log(player)
