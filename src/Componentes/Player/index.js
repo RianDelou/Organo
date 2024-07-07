@@ -1,11 +1,17 @@
 import "./Player.css";
 
 const Player = (props) => {
+
+  const handleClickRemove = () => {
+    props.onRemove(props.playerName); // estou removendo de acordo com o nome mas o ideal seria o ID
+  }
+
   return props.withPlayer ? (
     <div className="player">
       <div className="cabecalho" style={{ backgroundColor: props.corDeFundo }}>
         <img src={props.playerPhoto} alt={props.playerName}></img>
         <img src={props.agentIcon} alt={props.agentName}></img>
+        <button onClick={handleClickRemove}><img src="./imagens/buttonRemove.png" alt="Clique para remover"></img></button>
       </div>
       <div className="rodape">
         <h4>

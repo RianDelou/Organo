@@ -41,19 +41,20 @@ function App() {
   const [getPlayers, setPlayers] = useState([]);
   const [getAlert, setAlert] = useState();
 
+  const handleRemovePlayer = (playerName) => {
+    setPlayers((prevPlayers) => prevPlayers.filter((player) => player.getName !== playerName)); //remove player
+  };
+
   return (
     <div className="App">
       <Banner />
       <Formulario
         novoPlayer={(player) => {
-          debugger
           const playersCadaMap = getPlayers.filter((value) => value.getMap === player.getMap);
           const playerExistsByName = playersCadaMap.find((value) => value.getName.toLowerCase() === player.getName.toLowerCase());
           const playerExistsByAgent = playersCadaMap.find((value) => value.getAgent.nome === player.getAgent.nome);
-
-          console.log(player)
         
-          if (playersCadaMap.length >= 5) {
+          if (playersCadaMap.length >= 2) {
             setAlert(`Player não adicionado: O mapa ${player.getMap} contém 5 players`);
             return false;
           } else if (playerExistsByName) {
@@ -81,6 +82,7 @@ function App() {
             corSecundaria={map.corSecundaria}
             player={getPlayers.filter((value) => value.getMap === map.nome)}
             allMaps={mapas}
+            onRemovePlayer={handleRemovePlayer}
           />
         );
       })}

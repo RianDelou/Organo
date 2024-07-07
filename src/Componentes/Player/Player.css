@@ -6,8 +6,37 @@
     display: flex;
     justify-content: center;
     gap: 16px;
-    background-color:  #F0F0F0;
+    background-color: #F0F0F0;
     border-radius: 10px 10px 0px 0px;
+    position: relative;
+}
+
+.cabecalho button {
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; 
+}
+
+.cabecalho button img {
+    top: 2px;
+    right: 2px;
+    width: 100%;
+    height: 100%; 
+}
+
+.cabecalho button img:hover {
+    filter: brightness(2.5);
+    transition: filter 0.3s ease; /* Adicionar transição suave */
 }
 
     

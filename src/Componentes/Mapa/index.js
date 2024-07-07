@@ -17,6 +17,7 @@ const Mapa = (props) => {
             playerName={value.getName}
             playerPhoto={value.getPhotoURL}
             withPlayer={true}
+            onRemove={props.onRemovePlayer}
           ></Player>
         ))}
       </div>

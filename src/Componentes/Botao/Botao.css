@@ -1,4 +1,4 @@
-button {
+.buttonForInput {
     background-color:#18212a;
     border-radius: 10px;
     font-weight: 700;
@@ -9,7 +9,7 @@ button {
     color: #FFF;
 }
 
-button:hover {
+.buttonForInput:hover {
     color: #ee5861;
     transition: 0.5s;
 }

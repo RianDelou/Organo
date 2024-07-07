@@ -3,7 +3,7 @@ import "./Botao.css"
 const Botao = (props) => {
 
     return (
-        <button>{props.children}</button>
+        <button className="buttonForInput">{props.children}</button>
     )
 }
 
