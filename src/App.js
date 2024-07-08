@@ -54,7 +54,7 @@ function App() {
           const playerExistsByName = playersCadaMap.find((value) => value.getName.toLowerCase() === player.getName.toLowerCase());
           const playerExistsByAgent = playersCadaMap.find((value) => value.getAgent.nome === player.getAgent.nome);
         
-          if (playersCadaMap.length >= 2) {
+          if (playersCadaMap.length >= 5) {
             setAlert(`Player não adicionado: O mapa ${player.getMap} contém 5 players`);
             return false;
           } else if (playerExistsByName) {
