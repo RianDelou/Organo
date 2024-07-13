@@ -54,8 +54,9 @@
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 50px; /* Reduzir o padding superior */
+    padding-bottom: 120px; /* Reduzir o padding inferior */
+ 
 }
 
 .player .rodape h4 {
@@ -71,4 +72,15 @@
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+}
+
+.player .rodape .icon-funcao {
+    filter: grayscale(100%) brightness(0%);
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin: auto; 
+    display: block; /* Garante que o ícone se comporte como um bloco */
+    margin: -70px auto 0; /* Adiciona margem superior negativa para subir o ícone */
 }

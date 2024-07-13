@@ -18,6 +18,7 @@ const Player = (props) => {
           {props.playerName} / {props.agentName}
         </h4>
         <h5>{props.agentFunction}</h5>
+        <img src={props.agentFunctionIcon} alt="Function Icon" className="icon-funcao"></img>
       </div>
     </div>
   ) : (

@@ -52,7 +52,7 @@ function App() {
         novoPlayer={(player) => {
           const playersCadaMap = getPlayers.filter((value) => value.getMap === player.getMap);
           const playerExistsByName = playersCadaMap.find((value) => value.getName.toLowerCase() === player.getName.toLowerCase());
-          const playerExistsByAgent = playersCadaMap.find((value) => value.getAgent.nome === player.getAgent.nome);
+          const playerExistsByAgent = playersCadaMap.find((value) => value.getAgent.displayName === player.getAgent.displayName);
         
           if (playersCadaMap.length >= 5) {
             setAlert(`Player não adicionado: O mapa ${player.getMap} contém 5 players`);
@@ -61,7 +61,7 @@ function App() {
             setAlert(`Player não adicionado: O player ${player.getName} já existe no mapa ${player.getMap}`);
             return false;
           } else if (playerExistsByAgent) {
-            setAlert(`Player não adicionado: O agente ${player.getAgent.nome} já está sendo usado no mapa ${player.getMap}`);
+            setAlert(`Player não adicionado: O agente ${player.getAgent.displayName} já está sendo usado no mapa ${player.getMap}`);
             return false;
           } else {
             setPlayers([...getPlayers, player]);

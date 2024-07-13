@@ -11,9 +11,10 @@ const Mapa = (props) => {
           <Player
             corDeFundo={props.corSecundaria}
             key={value.getName}
-            agentName={value.getAgent.nome}
-            agentFunction={value.getAgent.funcao}
-            agentIcon={value.getAgent.icon}
+            agentName={value.getAgent.displayName}
+            agentFunction={value.getAgent.role.displayName}
+            agentFunctionIcon={value.getAgent.role.displayIcon}
+            agentIcon={value.getAgent.displayIcon}
             playerName={value.getName}
             playerPhoto={value.getPhotoURL}
             withPlayer={true}
