@@ -3,7 +3,7 @@ import "./Mapa.css";
 
 const Mapa = (props) => {
   return props.player.length > 0 ? (
-    <section className="mapa" style={{ backgroundColor: props.corPrimaria }}>
+    <section className="mapa" style={{ backgroundColor: props.corPrimaria, backgroundImage: `url(${props.splashArt})` }}>
       <h3 style={{ borderColor: props.corSecundaria }}>{props.mapa}</h3>
       <div className="players">
         {props.player.map((value) => (
@@ -24,7 +24,7 @@ const Mapa = (props) => {
       </div>
     </section>
   ) : (
-    <section className="mapa" style={{ backgroundColor: props.corPrimaria }}>
+    <section className="mapa" style={{ backgroundColor: props.corPrimaria, backgroundImage: `url(${props.splashArt})` }}>
       <h3 style={{ borderColor: props.corSecundaria }}>{props.mapa}</h3>
       <div className="players">
           <Player

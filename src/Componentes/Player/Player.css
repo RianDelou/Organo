@@ -1,5 +1,6 @@
 .player {
     width: 280px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .player .cabecalho {
@@ -55,7 +56,7 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
     padding-top: 50px; /* Reduzir o padding superior */
-    padding-bottom: 120px; /* Reduzir o padding inferior */
+    padding-bottom: 140px; /* Reduzir o padding inferior */
  
 }
 
